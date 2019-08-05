@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1039753847742",
+    "firebase_url": "https://medicinestore-4131e.firebaseio.com",
+    "project_id": "medicinestore-4131e",
+    "storage_bucket": "medicinestore-4131e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1039753847742:android:0f8dd60271a5d0c0",
+        "android_client_info": {
+          "package_name": "com.example.myproject.medicinestore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1039753847742-uctm6p75iecf45nf675d1519uogcm69n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myproject.medicinestore",
+            "certificate_hash": "7a7777636be4f0d2fef955f1964361d89867bbb3"
+          }
+        },
+        {
+          "client_id": "1039753847742-pqroa84tm3ljr000taajd1fq95gagvna.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQPbciH4Bp095wMq8dh3VxWLotJ40yryw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1039753847742-pqroa84tm3ljr000taajd1fq95gagvna.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
