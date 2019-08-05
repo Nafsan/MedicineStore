@@ -11,10 +11,10 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.firebase.client.Firebase;
+
 public class MainActivity extends AppCompatActivity {
-
     GridView gridView;
-
     String[] Options = {"Medicine List","Symptoms","Instruments","Extras","Order Now","Add Items"};
     int[] OptionImage = {R.drawable.medicine,R.drawable.symptoms,R.drawable.instruments,R.drawable.informations,R.drawable.add_item,R.drawable.order};
 
@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
                 else if (i == 3) {
                     /*Intent intent = new Intent(getApplicationContext(), GuideActivity.class);
                     startActivity(intent);
-
 */                }
                 else if (i == 4) {
   /*                  Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
@@ -91,4 +90,5 @@ public class MainActivity extends AppCompatActivity {
             return view1;
         }
     }
+
 }
