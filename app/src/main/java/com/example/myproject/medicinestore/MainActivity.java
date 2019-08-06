@@ -12,7 +12,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.firebase.client.Firebase;
+
 
 public class MainActivity extends AppCompatActivity {
     GridView gridView;
