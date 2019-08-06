@@ -32,10 +32,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 if(i == 0) {
+                    startActivity(new Intent(MainActivity.this, Login.class));
                     /*Intent intent = new Intent(getApplicationContext(), TrainingActivity.class);
                     startActivity(intent);*/
                 }
                 else if (i == 6) {
+
                     /*Intent intent = new Intent(getApplicationContext(), Quiz_main_activity.class);
                     startActivity(intent);*/
                 }
