@@ -2,6 +2,7 @@ package com.example.myproject.medicinestore;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                     /*Intent intent = new Intent(getApplicationContext(), TrainingActivity.class);
                     startActivity(intent);*/
                 }
-                else if (i == 1) {
+                else if (i == 6) {
                     /*Intent intent = new Intent(getApplicationContext(), Quiz_main_activity.class);
                     startActivity(intent);*/
                 }
@@ -47,10 +48,10 @@ public class MainActivity extends AppCompatActivity {
                     /*Intent intent = new Intent(getApplicationContext(), GuideActivity.class);
                     startActivity(intent);
 */                }
-                else if (i == 4) {
-  /*                  Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
-                    startActivity(intent);
-*/
+                else if (i == 1) {
+                   // Intent intent = new Intent(getApplicationContext(), SignUp.class);
+                    //startActivity(intent);
+
                 }
 
                 else {
