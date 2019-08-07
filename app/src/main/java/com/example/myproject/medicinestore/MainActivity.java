@@ -1,7 +1,5 @@
 package com.example.myproject.medicinestore;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +9,8 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 
 
@@ -32,11 +32,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 if(i == 0) {
-                    startActivity(new Intent(MainActivity.this, Login.class));
+                    //startActivity(new Intent(MainActivity.this, Login.class));
                     /*Intent intent = new Intent(getApplicationContext(), TrainingActivity.class);
                     startActivity(intent);*/
                 }
-                else if (i == 6) {
+                else if (i == 1) {
 
                     /*Intent intent = new Intent(getApplicationContext(), Quiz_main_activity.class);
                     startActivity(intent);*/
@@ -50,16 +50,16 @@ public class MainActivity extends AppCompatActivity {
                     /*Intent intent = new Intent(getApplicationContext(), GuideActivity.class);
                     startActivity(intent);
 */                }
-                else if (i == 1) {
+                else if (i == 4) {
                    // Intent intent = new Intent(getApplicationContext(), SignUp.class);
                     //startActivity(intent);
 
                 }
 
                 else {
-  /*                  Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), AddItemActivity.class);
                     startActivity(intent);
-  */              }
+                }
             }
         });
 
