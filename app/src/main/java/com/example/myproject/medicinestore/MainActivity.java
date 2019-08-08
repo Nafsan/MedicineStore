@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 if(i == 0) {
                     //startActivity(new Intent(MainActivity.this, Login.class));
-                    /*Intent intent = new Intent(getApplicationContext(), TrainingActivity.class);
-                    startActivity(intent);*/
+                    Intent intent = new Intent(getApplicationContext(), MedicineListActivity.class);
+                    startActivity(intent);
                 }
                 else if (i == 1) {
 

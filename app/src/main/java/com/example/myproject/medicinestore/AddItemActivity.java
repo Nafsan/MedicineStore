@@ -29,11 +29,11 @@ import static android.content.ContentValues.TAG;
 public class AddItemActivity extends AppCompatActivity {
 
     private FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
-    private DatabaseReference mDatabaseReference = mDatabase.getReference();
+    private DatabaseReference mDatabaseReference = mDatabase.getReference("Medicine");
 
     EditText name, description,price;
     Button submit;
-    AutoCompleteTextView categoryTextView,diseaseTextView;
+    AutoCompleteTextView categoryTextView,diseaseTextView,companyTextView;
     private Firebase mRootRef;
     private String pid= null;
     @Override
@@ -53,7 +53,10 @@ public class AddItemActivity extends AppCompatActivity {
         };
         String[] disease = {"Fever","Gastric","Ulcer","Cancer","Kidney","Heart Disease","Pain","Liver"};
 
+        String[] companies ={"Square", "Beximco", "ACI","ACME","Marksman","General"};
+
         FirebaseApp.initializeApp(this);
+
 
         categoryTextView = findViewById(R.id.category);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,
@@ -62,6 +65,11 @@ public class AddItemActivity extends AppCompatActivity {
         categoryTextView.setThreshold(1);
         categoryTextView.setAdapter(arrayAdapter);
 
+        companyTextView = findViewById(R.id.company);
+        ArrayAdapter<String>companyAdapter = new ArrayAdapter<>(this,
+                android.R.layout.select_dialog_item,companies);
+        companyTextView.setThreshold(1);
+        companyTextView.setAdapter(companyAdapter);
 
         diseaseTextView = findViewById(R.id.disease);
         ArrayAdapter<String> diseaseAdapter = new ArrayAdapter<>(this,
@@ -110,11 +118,10 @@ public class AddItemActivity extends AppCompatActivity {
         final String Mcategory = categoryTextView.getText().toString();
         final String Mdisease = diseaseTextView.getText().toString();
         final String Mprice = price.getText().toString();
+        final String Mcompany = companyTextView.getText().toString();
+        final Medicine medicine = new Medicine(Mname,Mcompany,Mcategory,Mdescription,Mdisease,Mprice);
 
-        mRootRef = new Firebase("https://medicinestore-4131e.firebaseio.com/Medicine");
-        FirebaseDatabase.getInstance().getReference().child("Medicine").push().getKey();
-
-        Query query = FirebaseDatabase.getInstance().getReference().child("Medicine").orderByChild("Medicine Name").equalTo(Mname);
+        Query query = FirebaseDatabase.getInstance().getReference().child("Medicine").orderByChild(medicine.name).equalTo(Mname);
         query.addListenerForSingleValueEvent(new ValueEventListener() {
 
 
@@ -122,12 +129,12 @@ public class AddItemActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
 
-                if (!dataSnapshot.exists() && Mname!=null && Mcategory!=null && Mdisease!=null && Mdescription!=null && Mprice!=null) {
-                    mDatabaseReference.child(pid).child("Medicine Name").setValue(Mname);
+                if (!dataSnapshot.exists() && Mname!=null && Mcompany!=null && Mcategory!=null && Mdisease!=null && Mdescription!=null && Mprice!=null) {
+                    mDatabaseReference.child(pid).setValue(medicine);/*
                     mDatabaseReference.child(pid).child("Category").setValue(Mcategory);
                     mDatabaseReference.child(pid).child("Description").setValue(Mdescription);
                     mDatabaseReference.child(pid).child("Disease").setValue(Mdisease);
-                    mDatabaseReference.child(pid).child("Price").setValue(Mprice);
+                    mDatabaseReference.child(pid).child("Price").setValue(Mprice);*/
 
                     Toast.makeText(getApplicationContext(), "Item Added", Toast.LENGTH_SHORT).show();
 

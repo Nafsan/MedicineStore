@@ -21,6 +21,28 @@
             android:layout_margin="20sp"
             android:id="@+id/medicine_id"
             />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Company Name"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:layout_marginLeft="20sp"
+            android:layout_marginRight="20sp"
+            android:layout_marginTop="20sp"
+            />
+        <AutoCompleteTextView
+            android:id="@+id/company"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/medicine_id"
+            android:ems="10"
+            android:text=""
+            android:layout_marginLeft="20sp"
+            android:layout_marginRight="20sp"
+            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -56,8 +78,8 @@
         <EditText
             android:text=""
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textImeMultiLine"
+            android:layout_height="match_parent"
+            android:inputType="textShortMessage"
             android:id="@+id/description"
             android:textSize="20sp"
             android:layout_margin="20sp"
@@ -91,7 +113,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Price"
+            android:text="Price(Per piece)"
             android:textStyle="bold"
             android:textSize="22sp"
             android:layout_marginLeft="20sp"
@@ -106,6 +128,8 @@
             android:id="@+id/price"
             android:text=""
             android:textSize="20sp"
+            android:layout_marginLeft="20sp"
+            android:layout_marginRight="20sp"
             />
 
         <Button
