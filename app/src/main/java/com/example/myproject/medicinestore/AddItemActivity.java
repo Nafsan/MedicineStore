@@ -41,6 +41,7 @@ public class AddItemActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item);
 
+        setTitle("Add Medicine");
         final String[] categories = { "5-alpha-reductase inhibitors", "5-aminosalicylates", "5HT3 receptor antagonists", "alkylating agents", "allergenics", "alpha-glucosidase inhibitors", "alternative medicines", "amebicides",
                 "aminoglycosides", "aminopenicillins", "aminosalicylates", "bacterial vaccines", "barbiturate anticonvulsants",
                 "barbiturates", "calcimimetics", "calcineurin inhibitors", "calcitonin", "decongestants", "dermatological agents", "diagnostic radiopharmaceuticals", "diarylquinolines",

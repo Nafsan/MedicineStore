@@ -63,7 +63,7 @@ public class Medicine {
 
     }
     public String toString(){
-        return name+" price: "+price+" (Per piece) "+company;
+        return name+" "+company+ " "+category+" "+description+" "+disease+" "+price;
 
     }
 

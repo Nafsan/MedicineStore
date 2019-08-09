@@ -1,6 +1,9 @@
 package com.example.myproject.medicinestore;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -29,14 +32,29 @@ public class MedicineListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medicine_list);
 
+        setTitle("Medicines");
+
         medicineList = findViewById(R.id.medicine_list);
         arrayAdapter = new ArrayAdapter<>(this,R.layout.medicine_list_text,arrayList);
 
         medicineList.setAdapter(arrayAdapter);
+        medicineList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String selectedFromList = (String) medicineList.getItemAtPosition(position);
+                //String pid = FirebaseDatabase.getInstance().getReference("Medicine").child("Medicine").getKey();
+
+                //Toast.makeText(getApplicationContext(),pid,Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(MedicineListActivity.this,MedicineDescriptionActivity.class);
+                intent.putExtra("name",selectedFromList);
+                startActivity(intent);
+            }
+        });
         mDatabaseReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                String value = dataSnapshot.getValue(Medicine.class).toString();
+                String value = dataSnapshot.getValue(Medicine.class).getName();
                 arrayList.add(value);
                 arrayAdapter.notifyDataSetChanged();
             }
@@ -61,6 +79,8 @@ public class MedicineListActivity extends AppCompatActivity {
 
             }
         });
+
+
     }
 
 }
