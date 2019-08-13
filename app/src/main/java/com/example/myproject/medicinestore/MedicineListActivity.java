@@ -42,10 +42,6 @@ public class MedicineListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selectedFromList = (String) medicineList.getItemAtPosition(position);
-                //String pid = FirebaseDatabase.getInstance().getReference("Medicine").child("Medicine").getKey();
-
-                //Toast.makeText(getApplicationContext(),pid,Toast.LENGTH_LONG).show();
-
                 Intent intent = new Intent(MedicineListActivity.this,MedicineDescriptionActivity.class);
                 intent.putExtra("name",selectedFromList);
                 startActivity(intent);
@@ -79,7 +75,6 @@ public class MedicineListActivity extends AppCompatActivity {
 
             }
         });
-
 
     }
 
